@@ -9,7 +9,7 @@
     /*Color mode HSL(hue, saturation, lightness)*/
     --white-color: hsl(210, 32%, 99%);
     --text-color: hsl(210, 4%, 55%);
-    --dark-color-black: #000;
+    --dark-color-black: blue;
     --white-color-light: hsla(210, 4%, 99%, .1);
     --gradient-x: linear-gradient(90deg,
             hsla(0, 0%, 0%, 0),
@@ -53,7 +53,7 @@
 body {
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
-    color: var(--text-color);
+    background-color: rgb(182, 180, 180);
 }
 
 a {
@@ -118,7 +118,7 @@ img {
 
 .header__toggle {
     font-size: 1.25rem;
-    color: var(--white-color);
+    color: #000;
     cursor: pointer;
 }
 
@@ -170,7 +170,11 @@ img {
 }
 
 .sidebar__logo-text {
-    width: 76px;
+    width: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px;
 }
 
 .sidebar__content {
@@ -190,7 +194,7 @@ img {
     left: 0;
     width: 100%;
     height: 1px;
-    background: var(--gradient-x);
+    background: #000;
 }
 
 .sidebar__list {
@@ -200,7 +204,7 @@ img {
 }
 
 .sidebar__link {
-    color: var(--text-color);
+    color: #000;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
@@ -215,7 +219,7 @@ img {
 }
 
 .sidebar__link i {
-    color: var(--white-color);
+    color: #000;
     font-size: 1.25rem;
 }
 
@@ -228,7 +232,7 @@ img {
     background-color: var(--white-color-light);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    color: var(--white-color);
+    color: #000;
 }
 
 .sidebar__title span {

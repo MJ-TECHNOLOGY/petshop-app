@@ -12,10 +12,6 @@
 
 <body>
 
-    <!-- Sidebar bg -->
-
-
-    <!--=============== HEADER ===============-->
     <header class="header">
         <div class="header__container container">
             <div class="header__toggle" id="header-toggle">
@@ -24,12 +20,11 @@
         </div>
     </header>
 
-    <!--=============== SIDEBAR ===============-->
     <div class="sidebar" id="sidebar">
         <nav class="sidebar__container">
             <div class="sidebar__logo">
-                <img src="View/assets/yt-logo.svg" alt="" class="sidebar__logo-img">
-                <img src="View/assets/yt-logo-text.svg" alt="" class="sidebar__logo-text">
+                <img src="View/assets/logo.png" alt="" class="sidebar__logo-img">
+                <h2 class="sidebar__logo-text">PETSHOP</h2>
             </div>
 
             <div class="sidebar__content">
@@ -69,14 +64,12 @@
         </nav>
     </div>
 
-    <!--=============== MAIN ===============-->
     <main class="main container" id="main">
         <h1>Sidebar Menu</h1>
     </main>
 
 
     <script>
-        /*=============== SHOW SIDEBAR ===============*/
         const showSidebar = (toggleId, sidebarId, mainId) => {
             const toggle = document.getElementById(toggleId),
                 sidebar = document.getElementById(sidebarId),
@@ -84,16 +77,13 @@
 
             if (toggle && sidebar && main) {
                 toggle.addEventListener('click', () => {
-                    /* Show sidebar */
                     sidebar.classList.toggle('show-sidebar')
-                    /* Add padding main */
                     main.classList.toggle('main-pd')
                 })
             }
         }
         showSidebar('header-toggle', 'sidebar', 'main')
 
-        /*=============== LINK ACTIVE ===============*/
         const sidebarLink = document.querySelectorAll('.sidebar__link')
 
         function linkColor() {
