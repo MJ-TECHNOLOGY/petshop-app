@@ -12,87 +12,83 @@
 
 <body>
 
-    <header class="header">
-        <div class="header__container container">
-            <div class="header__toggle" id="header-toggle">
-                <i class="ri-menu-line"></i>
-            </div>
-        </div>
-    </header>
-
-    <div class="sidebar" id="sidebar">
-        <nav class="sidebar__container">
-            <div class="sidebar__logo">
-                <img src="View/assets/logo.png" alt="" class="sidebar__logo-img">
-                <h2 class="sidebar__logo-text">PETSHOP</h2>
-            </div>
-
-            <div class="sidebar__content">
-                <div class="sidebar__list">
-                    <a href="#" class="sidebar__link active-link">
-                        <i class="ri-home-5-line"></i>
-                        <span class="sidebar__link-name">Home</span>
-                        <span class="sidebar__link-floating">Home</span>
-                    </a>
-
-                    <a href="#" class="sidebar__link">
-                        <i class="ri-compass-3-line"></i>
-                        <span class="sidebar__link-name">Cliente</span>
-                        <span class="sidebar__link-floating">Cliente</span>
-                    </a>
-
-                    <a href="#" class="sidebar__link">
-                        <i class="ri-video-line"></i>
-                        <span class="sidebar__link-name">Animal</span>
-                        <span class="sidebar__link-floating">Animal</span>
-                    </a>
-
-                    <a href="#" class="sidebar__link">
-                        <i class="ri-add-box-line"></i>
-                        <span class="sidebar__link-name">Serviço</span>
-                        <span class="sidebar__link-floating">Serviço</span>
-                    </a>
-
-                    <a href="#" class="sidebar__link">
-                        <i class="ri-logout-box-r-line"></i>
-                        <span class="sidebar__link-name">Logout</span>
-                        <span class="sidebar__link-floating">Logout</span>
-                    </a>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image d-flex justify-content-center align-items-center">
+                    <img src="View/assets/logo.png">
+                </span>
+                <div class="text logo-text">
+                    <span class="name">PetShop</span>
                 </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li>
+                    <a href="/home">
+                        <i class="bx bx-home-alt icon"></i>
+                        <span class="text nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/produto">
+                        <i class='bx bx-package icon'></i>
+                        <span class="text nav-text">Produtos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/categoria_produto">
+                        <i class='bx bx-category icon'></i>
+                        <span class="text nav-text">Categoria</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/movimentacao">
+                        <i class='bx bx-money-withdraw icon'></i>
+                        <span class="text nav-text">Movimentação</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/venda">
+                        <i class='bx bx-cart-add icon'></i>
+                        <span class="text nav-text">Nova Venda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/relatorio">
+                        <i class='bx bx-line-chart icon'></i>
+                        <span class="text nav-text">Relatório de Venda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/taxa">
+                        <i class='bx bx-credit-card icon'></i>
+                        <span class="text nav-text">Taxas do Cartão</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/usuario">
+                        <i class='bx bx-user icon'></i>
+                        <span class="text nav-text">Usuários</span>
+                    </a>
+                </li>
 
             </div>
-        </nav>
-    </div>
 
-    <main class="main container" id="main">
-        <h1>Sidebar Menu</h1>
-    </main>
+            <div class="bottom-content">
+                <li class="">
+                    <a href="/logout">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+            </div>
 
-
-    <script>
-        const showSidebar = (toggleId, sidebarId, mainId) => {
-            const toggle = document.getElementById(toggleId),
-                sidebar = document.getElementById(sidebarId),
-                main = document.getElementById(mainId)
-
-            if (toggle && sidebar && main) {
-                toggle.addEventListener('click', () => {
-                    sidebar.classList.toggle('show-sidebar')
-                    main.classList.toggle('main-pd')
-                })
-            }
-        }
-        showSidebar('header-toggle', 'sidebar', 'main')
-
-        const sidebarLink = document.querySelectorAll('.sidebar__link')
-
-        function linkColor() {
-            sidebarLink.forEach(l => l.classList.remove('active-link'))
-            this.classList.add('active-link')
-        }
-
-        sidebarLink.forEach(l => l.addEventListener('click', linkColor))
-    </script>
+        </div>
+    </nav>
 
     <?php include 'View/includes/js_config.php' ?>
 
