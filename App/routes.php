@@ -1,8 +1,9 @@
 <?php
 
-use App\Controller\ {
+use App\Controller\{
     DashboardController,
-    ClienteController
+    ClienteController,
+    AnimalController
 };
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -22,6 +23,21 @@ switch ($url) {
         break;
     case '/cliente/delete':
         ClienteController::delete();
+        break;
+
+    case '/animal':
+        AnimalController::index();
+        break;
+
+    case '/animal/save':
+        AnimalController::save();
+        break;
+
+    case '/animal/get-by-id':
+        AnimalController::getById();
+        break;
+    case '/animal/delete':
+        AnimalController::delete();
         break;
 
 
