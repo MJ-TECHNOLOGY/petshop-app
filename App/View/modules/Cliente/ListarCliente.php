@@ -85,6 +85,7 @@
 
 
     <?php include 'View/includes/js_config.php' ?>
+    <script src="View/js/src/jquery.cliente.js"></script>
 
 </body>
 
