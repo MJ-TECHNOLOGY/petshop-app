@@ -20,45 +20,33 @@
                 </a>
             </li>
             <li>
-                <a href="/produto">
-                    <i class='bx bx-package icon'></i>
+                <a href="/cliente">
+                    <i class='bx bx-user icon'></i>
                     <span class="text nav-text">Clientes</span>
                 </a>
             </li>
             <li>
-                <a href="/categoria_produto">
-                    <i class='bx bx-category icon'></i>
+                <a href="/animal">
+                    <i class='bx bxs-dog icon'></i>
                     <span class="text nav-text">Animal</span>
                 </a>
             </li>
             <li>
-                <a href="/movimentacao">
-                    <i class='bx bx-money-withdraw icon'></i>
+                <a href="/servico">
+                    <i class='bx bx-task icon'></i>
                     <span class="text nav-text">Serviços</span>
                 </a>
             </li>
             <li>
                 <a href="/venda">
-                    <i class='bx bx-cart-add icon'></i>
+                    <i class='bx bx-store-alt icon'></i>
                     <span class="text nav-text">Produtos</span>
                 </a>
             </li>
             <li>
                 <a href="/relatorio">
-                    <i class='bx bx-line-chart icon'></i>
+                    <i class='bx bx-cog icon'></i>
                     <span class="text nav-text">Configuração</span>
-                </a>
-            </li>
-            <li>
-                <a href="/taxa">
-                    <i class='bx bx-credit-card icon'></i>
-                    <span class="text nav-text">Taxas do Cartão</span>
-                </a>
-            </li>
-            <li>
-                <a href="/usuario">
-                    <i class='bx bx-user icon'></i>
-                    <span class="text nav-text">Usuários</span>
                 </a>
             </li>
 

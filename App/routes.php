@@ -1,6 +1,7 @@
 <?php
 
 use App\Controller\ {
+    DashboardController,
     ClienteController
 };
 
@@ -24,7 +25,11 @@ switch ($url) {
         break;
 
 
+    case '/home':
+        DashboardController::index();
+        break;
+
     default:
-        header('Location: /cliente');
+        header('Location: /home');
         break;
 }
