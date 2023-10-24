@@ -14,7 +14,7 @@ class ClienteDAO extends DAO
 
     public function insert(ClienteModel $model)
     {
-        $sql = "INSERT INTO cliente (nome, cpf, email, data_nascimento, telefone, logradouro, numero, bairro, cidade, cep, ponto_referencia) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)";
+        $sql = "INSERT INTO cliente (nome, cpf, email, data_nascimento, telefone, logradouro, numero, bairro, cidade, cep, ponto_referencia) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = parent::getConnection()->prepare($sql);
 

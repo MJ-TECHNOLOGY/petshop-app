@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+:root {
+    /* ===== Colors ===== */
+    --body-color: #f5f3d6;
+    --sidebar-color: #FFF;
+    --primary-color: #1e82f4;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -131,6 +146,13 @@ body {
     display: flex;
     justify-content: center;
 }
+
+/*.input-row{
+    /* border: 1px solid red;
+     display: flex;
+     padding-right: 10px;
+     justify-content: space-between;
+ }*/
 
 /* COMANDOS PARA RESPONSIVIDADE */
 @media screen and (max-width: 1980px) {

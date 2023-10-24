@@ -44,7 +44,7 @@ class ClienteController extends Controller
         $cliente->numero = $_POST['numero'];
         $cliente->bairro = $_POST['bairro'];
         $cliente->cidade = $_POST['cidade'];
-        $cliente->cidade = $_POST['cep'];
+        $cliente->cep = $_POST['cep'];
         $cliente->ponto_referencia = $_POST['ponto_referencia'];
 
         $cliente->save();
