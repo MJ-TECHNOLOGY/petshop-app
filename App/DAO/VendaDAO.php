@@ -50,7 +50,7 @@ class VendaDAO extends DAO
         $sql = "SELECT v.*, c.nome AS nome_cliente,
                 a.nome_animal AS nome_animal
                 FROM venda v
-                JOIN cliente c ON (c.id = v.id_cliente),
+                JOIN cliente c ON (c.id = v.id_cliente)
                 JOIN animal a ON (a.id = v.id_animal)";
 
         $stmt = parent::getConnection()->prepare($sql);
@@ -65,7 +65,7 @@ class VendaDAO extends DAO
         $sql = "SELECT v.*, c.nome AS nome_cliente,
                 a.nome_animal AS nome_animal
                 FROM venda v
-                JOIN cliente c ON (c.id = v.id_cliente),
+                JOIN cliente c ON (c.id = v.id_cliente)
                 JOIN animal a ON (a.id = v.id_animal)
                 WHERE v.id=?";
 

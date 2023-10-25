@@ -46,4 +46,13 @@ class VendaController extends Controller
 
         header("Location: /venda");
     }
+
+    public static function delete()
+    {
+        $model = new VendaModel();
+
+        $model->delete( (int) $_GET['id']);
+
+        parent::setResponseAsJSON($model);
+    }
 }

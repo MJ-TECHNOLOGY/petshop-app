@@ -1,0 +1,34 @@
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/*.input-row{
+   /* border: 1px solid red;
+    display: flex;
+    padding-right: 10px;
+    justify-content: space-between;
+}
+
+
+.modal-body{
+    gap: 15px;
+}
+
+tr{
+    height: auto;
+}
+
+td{
+    height: 30px;
+    
+}
+
+.actions-list{
+    margin-top: 8px;
+}
+
+.main-card .buttons-container .select-container .btn {
+    background-color: white !important;
+  }*/
