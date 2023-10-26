@@ -32,13 +32,13 @@
                 </a>
             </li>
             <li>
-                <a href="/servico">
+                <a href="/venda">
                     <i class='bx bx-task icon'></i>
-                    <span class="text nav-text">Serviços</span>
+                    <span class="text nav-text">Venda</span>
                 </a>
             </li>
             <li>
-                <a href="/venda">
+                <a href="/produtos">
                     <i class='bx bx-store-alt icon'></i>
                     <span class="text nav-text">Produtos</span>
                 </a>

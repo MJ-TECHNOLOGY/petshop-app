@@ -4,8 +4,8 @@
     padding: 20px;
 }
 
-/*.input-row{
-   /* border: 1px solid red;
+.input-row{
+   /* border: 1px solid red; */
     display: flex;
     padding-right: 10px;
     justify-content: space-between;
@@ -31,4 +31,4 @@ td{
 
 .main-card .buttons-container .select-container .btn {
     background-color: white !important;
-  }*/
+  }
