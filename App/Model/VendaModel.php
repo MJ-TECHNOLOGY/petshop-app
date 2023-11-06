@@ -8,7 +8,7 @@ use App\DAO\VendaDAO;
 
 class VendaModel extends Model
 {
-    public $id, $data_venda, $agendamento, $id_cliente, $id_animal;
+    public $id, $agendamento, $id_cliente, $id_animal;
     public $lista_cliente, $lista_animal, $cliente, $animal;
 
     public function save()

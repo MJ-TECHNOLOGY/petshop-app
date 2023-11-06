@@ -14,14 +14,13 @@ class VendaDAO extends DAO
 
     public function insert(VendaModel $model)
     {
-        $sql = "INSERT INTO venda (data_venda, agendamento, id_cliente, id_animal) VALUE (?, ?, ?, ?)";
+        $sql = "INSERT INTO venda (agendamento, id_cliente, id_animal) VALUE (?, ?, ?, ?)";
 
         $stmt = parent::getConnection()->prepare($sql);
 
-        $stmt->bindValue(1, $model->data_venda);
-        $stmt->bindValue(2, $model->agendamento);
-        $stmt->bindValue(3, $model->id_cliente);
-        $stmt->bindValue(4, $model->id_animal);
+        $stmt->bindValue(1, $model->agendamento);
+        $stmt->bindValue(2, $model->id_cliente);
+        $stmt->bindValue(3, $model->id_animal);
 
         $stmt->execute();
 
@@ -32,15 +31,14 @@ class VendaDAO extends DAO
 
     public function update(VendaModel $model)
     {
-        $sql = "UPDATE venda SET data_venda = ?, agendamento = ?, id_cliente = ?, id_animal = ? WHERE id = ?";
+        $sql = "UPDATE venda SET agendamento = ?, id_cliente = ?, id_animal = ? WHERE id = ?";
 
         $stmt = parent::getConnection()->prepare($sql);
 
-        $stmt->bindValue(1, $model->data_venda);
-        $stmt->bindValue(2, $model->agendamento);
-        $stmt->bindValue(3, $model->id_cliente);
-        $stmt->bindValue(4, $model->id_animal);
-        $stmt->bindValue(5, $model->id);
+        $stmt->bindValue(1, $model->agendamento);
+        $stmt->bindValue(2, $model->id_cliente);
+        $stmt->bindValue(3, $model->id_animal);
+        $stmt->bindValue(4, $model->id);
 
         $stmt->execute();
     }

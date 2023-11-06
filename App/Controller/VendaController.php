@@ -37,7 +37,6 @@ class VendaController extends Controller
         $venda = new VendaModel();
 
         $venda->id = $_POST['id'];
-        $venda->data_venda = $_POST['data_venda'];
         $venda->agendamento = $_POST['agendamento'];
         $venda->id_cliente = $_POST['id_cliente'];
         $venda->id_animal = $_POST['id_animal'];
