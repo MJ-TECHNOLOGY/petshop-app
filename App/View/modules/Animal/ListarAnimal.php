@@ -39,6 +39,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Nome_Dono</th>
                                     <th>Nome</th>
                                     <th>Raça</th>
                                     <th>Idade</th>
@@ -53,6 +54,7 @@
                                     <?php foreach ($model->rows as $animal) : ?>
                                         <tr>
                                             <td><?= $animal->id ?></td>
+                                            <td><?= $animal->nome_cliente ?></td>
                                             <td><?= $animal->nome_animal ?></td>
                                             <td><?= $animal->raca ?></td>
                                             <td><?= $animal->idade ?></td>
@@ -89,7 +91,18 @@
                 <form method="post" action="/animal/save">
                     <div class="modal-body">
                         <input type="hidden" name="id" id="id">
-                        <label for="txtNomeAnimal">Nome:</label>
+                        <label for="txtNomeDono">Nome do dono</label>
+                        <select class="selectpicker bg-light form-control" data-live-search="true" name="id_cliente" id="id_cliente">
+                            <option value="">Selecione o cliente</option>
+                            <?php if ($model->lista_cliente == null) : ?>
+                                <option value="">Cadastre o cliente primeiro!</option>
+                            <?php endif ?>
+
+                            <?php foreach ($model->lista_cliente as $cliente) : ?>
+                                <option value="<?= $cliente->id ?>"><?= $cliente->nome ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <label for="txtNomeAnimal">Nome do animal:</label>
                         <input type="text" name="nome_animal" class="form-control" id="txtNomeAnimal" required maxlength="90">
                         <label for="txtRaca">Raça:</label>
                         <input type="text" name="raca" class="form-control" id="txtRaca" required>

@@ -11,6 +11,7 @@ class AnimalController extends Controller
     {
         $model = new AnimalModel();
         $model->getAllRows();
+        $model->getAllCliente();
 
         include 'View/modules/Animal/ListarAnimal.php';
     }
@@ -41,6 +42,7 @@ class AnimalController extends Controller
         $animal->sexo = $_POST['sexo'];
         $animal->cor = $_POST['cor'];
         $animal->observacao = $_POST['observacao'];
+        $animal->id_cliente = $_POST['id_cliente'];
         
 
         $animal->save();
