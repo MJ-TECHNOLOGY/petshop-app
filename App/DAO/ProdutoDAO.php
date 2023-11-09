@@ -64,7 +64,8 @@ class ProdutoDAO extends DAO
     {
         $sql = "SELECT p.*, c.descricao AS categoria
                 FROM produto p
-                JOIN categoria c ON (c.id = p.id_categoria)";
+                JOIN categoria c ON (c.id = p.id_categoria)
+                WHERE p.id=?";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
