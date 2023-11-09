@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li>
-                <a href="/produtos">
+                <a href="/produto">
                     <i class='bx bx-store-alt icon'></i>
                     <span class="text nav-text">Produtos</span>
                 </a>

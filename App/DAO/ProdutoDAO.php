@@ -2,50 +2,56 @@
 
 namespace App\DAO;
 
-use App\Model\VendaModel;
+use App\Model\ProdutoModel;
 use \PDO;
 
-class VendaDAO extends DAO
+class ProdutoDAO extends DAO
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function insert(VendaModel $model)
+    public function insert(ProdutoModel $model)
     {
-        $sql = "INSERT INTO venda (agendamento, id_cliente, id_animal) VALUE (?, ?, ?)";
+        $sql = "INSERT INTO produto (descricao, marca, preco, peso, codigo, data_validade, id_categoria) VALUE (?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = parent::getConnection()->prepare($sql);
 
-        $stmt->bindValue(1, $model->agendamento);
-        $stmt->bindValue(2, $model->id_cliente);
-        $stmt->bindValue(3, $model->id_animal);
+        $stmt->bindValue(1, $model->descricao);
+        $stmt->bindValue(2, $model->marca);
+        $stmt->bindValue(3, $model->preco);
+        $stmt->bindValue(4, $model->peso);
+        $stmt->bindValue(5, $model->codigo);
+        $stmt->bindValue(6, $model->data_validade);
+        $stmt->bindValue(7, $model->id_categoria);
 
         $stmt->execute();
     }
 
-    public function update(VendaModel $model)
+    public function update(ProdutoModel $model)
     {
-        $sql = "UPDATE venda SET agendamento = ?, id_cliente = ?, id_animal = ? WHERE id = ?";
+        $sql = "UPDATE produto SET descricao = ?, marca = ?, preco = ?, peso = ?, codigo = ?, data_validade = ?, id_categoria = ? WHERE id = ?";
 
         $stmt = parent::getConnection()->prepare($sql);
 
-        $stmt->bindValue(1, $model->agendamento);
-        $stmt->bindValue(2, $model->id_cliente);
-        $stmt->bindValue(3, $model->id_animal);
-        $stmt->bindValue(4, $model->id);
+        $stmt->bindValue(1, $model->descricao);
+        $stmt->bindValue(2, $model->marca);
+        $stmt->bindValue(3, $model->preco);
+        $stmt->bindValue(4, $model->peso);
+        $stmt->bindValue(5, $model->codigo);
+        $stmt->bindValue(6, $model->data_validade);
+        $stmt->bindValue(7, $model->id_categoria);
+        $stmt->bindValue(8, $model->id);
 
         $stmt->execute();
     }
 
     public function select()
     {
-        $sql = "SELECT v.*, c.nome AS nome_cliente,
-                a.nome_animal AS nome_animal
-                FROM venda v
-                JOIN cliente c ON (c.id = v.id_cliente)
-                JOIN animal a ON (a.id = v.id_animal)";
+        $sql = "SELECT p.*, c.descricao AS categoria
+                FROM produto p
+                JOIN categoria c ON (c.id = p.id_categoria)";
 
         $stmt = parent::getConnection()->prepare($sql);
 
@@ -56,24 +62,21 @@ class VendaDAO extends DAO
 
     public function selectById(int $id)
     {
-        $sql = "SELECT v.*, c.nome AS nome_cliente,
-                a.nome_animal AS nome_animal
-                FROM venda v
-                JOIN cliente c ON (c.id = v.id_cliente)
-                JOIN animal a ON (a.id = v.id_animal)
-                WHERE v.id=?";
+        $sql = "SELECT p.*, c.descricao AS categoria
+                FROM produto p
+                JOIN categoria c ON (c.id = p.id_categoria)";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
 
         $stmt->execute();
 
-        return $stmt->fetchObject("App\Model\VendaModel");
+        return $stmt->fetchObject("App\Model\ProdutoModel");
     }
 
     public function delete(int $id)
     {
-        $sql = "DELETE FROM venda WHERE id = ?";
+        $sql = "DELETE FROM produto WHERE id = ?";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);

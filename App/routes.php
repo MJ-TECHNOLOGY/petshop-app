@@ -5,7 +5,8 @@ use App\Controller\{
     ClienteController,
     AnimalController,
     VendaController,
-    CategoriaController
+    CategoriaController,
+    ProdutoController
 };
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -57,7 +58,6 @@ switch ($url) {
         CategoriaController::delete();
         break;
 
-
     case '/venda':
         VendaController::index();
         break;
@@ -71,6 +71,22 @@ switch ($url) {
         break;
     case '/venda/delete':
         VendaController::delete();
+        break;
+
+
+    case '/produto':
+        ProdutoController::index();
+        break;
+
+    case '/produto/save':
+        ProdutoController::save();
+        break;
+
+    case '/produto/get-by-id':
+        ProdutoController::getById();
+        break;
+    case '/produto/delete':
+        ProdutoController::delete();
         break;
 
 

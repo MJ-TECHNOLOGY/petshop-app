@@ -35,7 +35,7 @@
                             </div>
                         </div>-->
 
-                        <table id="tableCliente" class="table table-bordered table-style off">
+                        <table id="tableVenda" class="table table-bordered table-style off">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -79,7 +79,7 @@
                     <div class="modal-body">
                         <input type="hidden" name="id" id="id">
                         <div class="input-container">
-                            <label for="agendamento">Agendamento::</label><br>
+                            <label for="agendamento">Agendamento:</label><br>
                             <input type="date" name="agendamento" class="form-control" id="agendamento" required><br>
                         </div>
                         <div class="mb-3">
@@ -112,7 +112,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn" style="background-color: #1e82f4;" id="adicionarCVenda">Salvar Registro</button>
+                        <button type="submit" class="btn" style="background-color: #1e82f4;" id="adicionarVenda">Salvar Registro</button>
                     </div>
                 </form>
             </div>
