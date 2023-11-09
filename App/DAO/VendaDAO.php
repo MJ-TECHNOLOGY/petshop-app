@@ -14,7 +14,7 @@ class VendaDAO extends DAO
 
     public function insert(VendaModel $model)
     {
-        $sql = "INSERT INTO venda (agendamento, id_cliente, id_animal) VALUE (?, ?, ?, ?)";
+        $sql = "INSERT INTO venda (agendamento, id_cliente, id_animal) VALUE (?, ?, ?)";
 
         $stmt = parent::getConnection()->prepare($sql);
 
@@ -23,10 +23,6 @@ class VendaDAO extends DAO
         $stmt->bindValue(3, $model->id_animal);
 
         $stmt->execute();
-
-        $model_retorno = new VendaModel();
-        $model_retorno->id = parent::getConnection()->lastInserteId();
-        return $model_retorno;
     }
 
     public function update(VendaModel $model)

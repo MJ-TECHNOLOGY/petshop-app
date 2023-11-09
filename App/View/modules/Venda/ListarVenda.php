@@ -4,91 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetShop - Venda</title>
+    <title>Petshop - Venda</title>
     <?php include 'View/includes/css_config.php' ?>
-    <link rel="stylesheet" href="View/modules/Venda/venda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
 </head>
 
 <body>
 
+    <!-- Navbar -->
     <?php include 'View/includes/navbar.php' ?>
 
     <div class="main-container">
         <div class="container-card">
             <div class="header-card">
-                <div class="text-container-header-card d-flex justify-content-center">
-                    <h4>Cadastro de Vendas</h4>
+                <div class="text-container-header-card">
+                    <p>Cadastro de Venda</p>
                 </div>
             </div>
 
             <div class="main-card">
                 <div class="containers-card buttons-container">
-                    <form class="form-add-cliente" method="post">
-                        <div class="input-container">
-                            <label for="txtDataVenda">Data da Venda: </label><br>
-                            <input class="form-control" type="date" name="data_venda" id="data_venda">
-                        </div>
-                        <div class="input-container select-container">
-                            <label for="id_cliente">Cliente:</label><br>
-                            <select class="selectpicker bg-light form-control" name="id_cliente" id="id_cliente">
-                                <option value="">Selecione o cliente</option>
-                                <?php foreach ($model->lista_cliente as $cliente) : ?>
-                                    <option value="<?= $cliente->id ?>"><?= $cliente->nome ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="input-container select-container">
-                            <label for="quantidade">Animal:</label><br>
-                            <select class="selectpicker bg-light form-control" name="id_cliente" id="id_cliente">
-                                <option value="">Selecione o animal</option>
-                                <?php foreach ($model->lista_animal as $animal) : ?>
-                                    <option value="<?= $animal->id ?>"><?= $animal->nome_animal ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="input-container">
-                            <button type="button" class="btn" style="background-color: #1e82f4;" id="adicionarProduto">Salvar Registro</button>
-                        </div>
-                    </form>
+                    <button id="adicionar" class="btn" data-bs-toggle="modal" data-bs-target="#modalVenda">Adicionar</button>
                 </div>
 
-                <div class="containers-card table-container">
+                <div class="containers-card">
                     <div class="container-table">
-                        <table id="tableProduto" class="table-produto table table-bordered">
-                            <thead class="tbody-produto">
+                        <!--<div class="loading-container d-flex justify-content-center">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>-->
+
+                        <table id="tableCliente" class="table table-bordered table-style off">
+                            <thead>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Agendamento</th>
-                                    <th>Cliente</th>
+                                    <th>Nome_Cliente</th>
                                     <th>Nome_Animal</th>
                                 </tr>
                             </thead>
-                            <tbody class="tbody-produto">
-                                <?php if ($model->rows != null) : ?>
+                            <tbody>
+                                <?php if ($model->rows !== null) : ?>
                                     <?php foreach ($model->rows as $venda) : ?>
                                         <tr>
+                                            <td><?= $venda->id ?></td>
                                             <td><?= $venda->agendamento ?></td>
-                                            <td><?= $venda->cliente ?></td>
-                                            <td><?= $venda->animal ?></td>
+                                            <td><?= $venda->nome_cliente ?></td>
+                                            <td><?= $venda->nome_animal ?></td>
                                         </tr>
                                     <?php endforeach ?>
                                 <?php else : ?>
                                     Nenhum registro.
-                                <?php endif ?>                                 
+                                <?php endif ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <!--<div class="containers-card action-container">
-                    <div class="final-actions">
-                        <button class="btn btn-pagamento" data-bs-toggle="modal" data-bs-target="#modalPagamento">Método de Pagamento</button>
-                    </div>
-                </div>-->
             </div>
         </div>
     </div>
 
+    <!--Modal-->
+    <div class="modal fade" id="modalVenda" tabindex="-1" role="dialog" aria-labelledby="modalVendaTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalVendaTitle">Cadastrar Venda</h5>
+                    <!--<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>-->
+                    </button>
+                </div>
+                <form method="post" action="/venda/save">
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="id">
+                        <div class="input-container">
+                            <label for="agendamento">Agendamento::</label><br>
+                            <input type="date" name="agendamento" class="form-control" id="agendamento" required><br>
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_cliente">Cliente:</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" name="id_cliente" id="id_cliente">
+                                <?php if ($model->lista_cliente == null) : ?>
+                                    <option class="option-evento" value="">Cadastre um cliente primeiro!</option>
+                                <?php else : ?>
+                                    <option class="option-evento" value="">Selecione um cliente</option>
+                                    <?php foreach ($model->lista_cliente as $cliente) : ?>
+                                        <option class="option-evento" value=<?= $cliente->id ?>><?= $cliente->nome ?></option>
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_animal">Animal:</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" name="id_animal" id="id_animal">
+                                <?php if ($model->lista_animal == null) : ?>
+                                    <option class="option-evento" value="">Cadastre um animal primeiro!</option>
+                                <?php else : ?>
+                                    <option class="option-evento" value="">Selecione uma animal</option>
+                                    <?php foreach ($model->lista_animal as $animal) : ?>
+
+                                        <option class="option-evento" value=<?= $animal->id ?>><?= $animal->nome_animal ?></option>
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn" style="background-color: #1e82f4;" id="adicionarCVenda">Salvar Registro</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
     <?php include 'View/includes/js_config.php' ?>
-    <!--<script src="View/js/src/jquery.cliente.js"></script>-->
+    <script src="View/js/src/jquery.venda.js"></script>
 
 </body>
 
