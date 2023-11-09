@@ -42,6 +42,11 @@
                     <i class='bx bx-store-alt icon'></i>
                     <span class="text nav-text">Produtos</span>
                 </a>
+            <li>
+                <a href="/categoria">
+                    <i class='bx bx-category icon'></i>
+                    <span class="text nav-text">Categoria</span>
+                </a>
             </li>
             <li>
                 <a href="/relatorio">
