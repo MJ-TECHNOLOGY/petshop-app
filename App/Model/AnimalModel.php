@@ -8,7 +8,6 @@ use App\DAO\ClienteDAO;
 class AnimalModel extends Model
 {
     public $id, $nome_animal, $raca, $idade, $sexo, $cor, $observacao;
-    public $lista_cliente, $id_cliente;
 
     public function save()
     {
@@ -28,13 +27,6 @@ class AnimalModel extends Model
         $dao = new AnimalDAO();
 
         $this->rows = $dao->select();
-    }
-
-    public function getAllCliente()
-    {
-        $dao = new ClienteDAO();
-
-        $this->lista_cliente = $dao->select();
     }
 
     public function getById(int $id)

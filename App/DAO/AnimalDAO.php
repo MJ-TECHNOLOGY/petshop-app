@@ -14,7 +14,7 @@ class AnimalDAO extends DAO
 
     public function insert(AnimalModel $model)
     {
-        $sql = "INSERT INTO animal (nome_animal, raca, idade, sexo, cor, observacao, id_cliente) VALUE (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO animal (nome_animal, raca, idade, sexo, cor, observacao) VALUE (?, ?, ?, ?, ?, ?)";
 
         $stmt = parent::getConnection()->prepare($sql);
 
@@ -24,14 +24,13 @@ class AnimalDAO extends DAO
         $stmt->bindValue(4, $model->sexo);
         $stmt->bindValue(5, $model->cor);
         $stmt->bindValue(6, $model->observacao);
-        $stmt->bindValue(7, $model->id_cliente);
 
         $stmt->execute();
     }
 
     public function update(AnimalModel $model)
     {
-        $sql = "UPDATE animal SET nome_animal=?, raca=?, idade=?, sexo=?, cor=?, observacao=?, id_cliente=? WHERE id=?";
+        $sql = "UPDATE animal SET nome_animal=?, raca=?, idade=?, sexo=?, cor=?, observacao=? WHERE id=?";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $model->nome_animal);
@@ -40,17 +39,14 @@ class AnimalDAO extends DAO
         $stmt->bindValue(4, $model->sexo);
         $stmt->bindValue(5, $model->cor);
         $stmt->bindValue(6, $model->observacao);
-        $stmt->bindValue(7, $model->id_cliente);
-        $stmt->bindValue(8, $model->id);
+        $stmt->bindValue(7, $model->id);
 
         $stmt->execute();
     }
 
     public function select()
     {
-        $sql = "SELECT a.*, c.nome AS nome_cliente
-                FROM animal a
-                JOIN cliente c ON (c.id = a.id_cliente)";
+        $sql = "SELECT * FROM animal";
 
         $stmt = parent::getConnection()->prepare($sql);
 
@@ -61,10 +57,7 @@ class AnimalDAO extends DAO
 
     public function selectById(int $id)
     {
-        $sql = "SELECT a.*, c.nome AS nome_cliente
-                FROM animal a
-                JOIN cliente c ON (c.id = a.id_cliente)
-                WHERE a.id=?";
+        $sql = "SELECT * FROM animal WHERE id = ?";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
