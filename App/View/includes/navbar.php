@@ -34,7 +34,13 @@
             <li>
                 <a href="/venda">
                     <i class='bx bx-task icon'></i>
-                    <span class="text nav-text">Venda</span>
+                    <span class="text nav-text">Agendamento</span>
+                </a>
+            </li>
+            <li>
+                <a href="/venda_produto">
+                    <i class='bx bx-task icon'></i>
+                    <span class="text nav-text">Venda Produto</span>
                 </a>
             </li>
             <li>

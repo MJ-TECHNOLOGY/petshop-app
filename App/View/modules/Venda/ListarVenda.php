@@ -18,7 +18,7 @@
         <div class="container-card">
             <div class="header-card">
                 <div class="text-container-header-card">
-                    <p>Cadastro de Venda</p>
+                    <p>Agendamento</p>
                 </div>
             </div>
 
