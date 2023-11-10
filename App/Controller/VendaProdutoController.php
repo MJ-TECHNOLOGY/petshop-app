@@ -45,7 +45,7 @@ class VendaProdutoController extends Controller
 
         $venda_produto->save();
 
-        header("Location: /venda/produto");
+        header("Location: /venda_produto");
     }
 
     public static function delete()

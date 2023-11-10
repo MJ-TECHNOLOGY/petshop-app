@@ -30,13 +30,13 @@ function getProdutoById(id) {
         url: "/produto/get-by-id?id=" + id,
         dataType: 'json',
         success: function (result) {
-            $('descricao').val(result.response_data.descricao);
-            $('marca').val(result.response_data.marca);
-            $('preco').val(result.response_data.preco);
-            $('peso').val(result.response_data.peso);
-            $('codigo').val(result.response_data.codigo);
-            $('data_validade').val(result.response_data.data_validade);
-            $('id_categoria').val(result.response_data.id_categoria);
+            $('#descricao').val(result.response_data.descricao);
+            $('#marca').val(result.response_data.marca);
+            $('#preco').val(result.response_data.preco);
+            $('#peso').val(result.response_data.peso);
+            $('#codigo').val(result.response_data.codigo);
+            $('#data_validade').val(result.response_data.data_validade);
+            $('#id_categoria').val(result.response_data.id_categoria);
             $('#id').val(result.response_data.id);
         },
         error: function (result) {

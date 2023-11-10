@@ -2,7 +2,7 @@ function addCliente(id, nome, cpf, email, data_nascimento, telefone, logradouro,
     if (nome !== "") {
         $.ajax({
             type: "POST",
-            url: "/cliente/save",
+            url: "/produto/save",
             data: {
                 id: id,
                 nome: nome,
@@ -12,10 +12,10 @@ function addCliente(id, nome, cpf, email, data_nascimento, telefone, logradouro,
                 telefone: telefone,
                 logradouro: logradouro,
                 numero: numero,
-                bairro: bairro, 
+                bairro: bairro,
                 cidade: cidade,
                 cep: cep,
-                ponto_referencia: ponto_referencia
+                ponto_referencia: ponto_referencia,
             },
             dataType: 'json',
             success: function (result) {
@@ -34,17 +34,17 @@ function getClienteById(id) {
         url: "/cliente/get-by-id?id=" + id,
         dataType: 'json',
         success: function (result) {
-            $('#txtNome').val(result.response_data.nome);
-            $('#txtEmail').val(result.response_data.email);
-            $('#txtCPF').val(result.response_data.cpf);
-            $('#txtDataNascimento').val(result.response_data.data_nascimento);
-            $('#txtTelefone').val(result.response_data.telefone);
-            $('#txtLogradouro').val(result.response_data.logradouro);
-            $('#txtNumero').val(result.response_data.numero);
-            $('#txtBairro').val(result.response_data.bairro);
-            $('#txtCidade').val(result.response_data.cidade);
-            $('#txtCEP').val(result.response_data.cep);
-            $('#txtReferencia').val(result.response_data.ponto_referencia);
+            $('#nome').val(result.response_data.nome);
+            $('#cpf').val(result.response_data.cpf);
+            $('#email').val(result.response_data.email);
+            $('#data_nascimento').val(result.response_data.data_nascimento);
+            $('#telefone').val(result.response_data.telfone);
+            $('#logradouro').val(result.response_data.logradouro);
+            $('#numero').val(result.response_data.numero);
+            $('#bairro').val(result.response_data.bairro);
+            $('#cidade').val(result.response_data.cidade);
+            $('#cep').val(result.response_data.cep);
+            $('#ponto_referencia').val(result.response_data.ponto_referencia);
             $('#id').val(result.response_data.id);
         },
         error: function (result) {

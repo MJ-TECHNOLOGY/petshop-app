@@ -26,9 +26,9 @@ function getVendaById(id) {
         url: "/venda/get-by-id?id=" + id,
         dataType: 'json',
         success: function (result) {
-            $('agendamento').val(result.response_data.agendamento);
-            $('id_cliente').val(result.response_data.id_cliente);
-            $('id_animal').val(result.response_data.id_animal);
+            $('#agendamento').val(result.response_data.agendamento);
+            $('#id_cliente').val(result.response_data.id_cliente);
+            $('#id_animal').val(result.response_data.id_animal);
             $('#id').val(result.response_data.id);
         },
         error: function (result) {

@@ -24,7 +24,7 @@ function getCategoriaById(id) {
         url: "/categoria/get-by-id?id=" + id,
         dataType: 'json',
         success: function (result) {
-            $('#txtDescricao').val(result.response_data.nome_animal);
+            $('#descricao').val(result.response_data.descricao);
             $('#id').val(result.response_data.id);
         },
         error: function (result) {

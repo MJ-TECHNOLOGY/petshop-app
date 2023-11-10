@@ -46,6 +46,7 @@
                                     <th>Peso</th>
                                     <th>Código</th>
                                     <th>Data_Validade</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -60,6 +61,10 @@
                                             <td><?= $produto->peso ?></td>
                                             <td><?= $produto->codigo ?></td>
                                             <td><?= $produto->data_validade ?></td>
+                                            <td class="actions-list">
+                                                <box-icon name="edit" color="#1e82f4" id="<?= $produto->id ?>" data-bs-toggle="modal" data-bs-target="#modalProduto" class="btn-icon btn-edit"></box-icon>
+                                                <box-icon name="trash" color="#1e82f4" id="<?= $produto->id ?>" class="btn-icon btn-delete"></box-icon>
+                                            </td>
                                         </tr>
                                     <?php endforeach ?>
                                 <?php else : ?>

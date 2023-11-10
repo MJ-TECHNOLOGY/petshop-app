@@ -42,6 +42,7 @@
                                     <th>Agendamento</th>
                                     <th>Nome_Cliente</th>
                                     <th>Nome_Animal</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,6 +53,10 @@
                                             <td><?= $venda->agendamento ?></td>
                                             <td><?= $venda->nome_cliente ?></td>
                                             <td><?= $venda->nome_animal ?></td>
+                                            <td class="actions-list">
+                                                <box-icon name="edit" color="#1e82f4" id="<?= $venda->id ?>" data-bs-toggle="modal" data-bs-target="#modalVenda" class="btn-icon btn-edit"></box-icon>
+                                                <box-icon name="trash" color="#1e82f4" id="<?= $venda->id ?>" class="btn-icon btn-delete"></box-icon>
+                                            </td>
                                         </tr>
                                     <?php endforeach ?>
                                 <?php else : ?>
@@ -101,7 +106,7 @@
                                 <?php if ($model->lista_animal == null) : ?>
                                     <option class="option-evento" value="">Cadastre um animal primeiro!</option>
                                 <?php else : ?>
-                                    <option class="option-evento" value="">Selecione uma animal</option>
+                                    <option class="option-evento" value="">Selecione um animal</option>
                                     <?php foreach ($model->lista_animal as $animal) : ?>
 
                                         <option class="option-evento" value=<?= $animal->id ?>><?= $animal->nome_animal ?></option>

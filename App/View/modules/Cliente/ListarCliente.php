@@ -98,27 +98,27 @@
                     <div class="modal-body">
                         <input type="hidden" name="id" id="id">
                         <label for="txtNome">Nome:</label>
-                        <input type="text" name="nome" class="form-control" id="txtNome" required maxlength="90">
+                        <input type="text" name="nome" class="form-control" id="nome" required maxlength="90">
                         <label for="txtEmail">Email:</label>
-                        <input type="email" name="email" class="form-control" id="txtEmail" required>
+                        <input type="email" name="email" class="form-control" id="email" required>
                         <label for="txtCPF">CPF:</label>
-                        <input type="number" name="cpf" class="form-control" id="txtCPF" required>
+                        <input type="number" name="cpf" class="form-control" id="cpf" required>
                         <label for="txtDataNascimento">Data Nascimento:</label>
-                        <input type="date" name="data_nascimento" class="form-control" id="txtDataNascimento" required>
+                        <input type="date" name="data_nascimento" class="form-control" id="data_nascimento" required>
                         <label for="txtTelefone">Telefone:</label>
-                        <input type="number" name="telefone" class="form-control" id="txtTelefone" required>
+                        <input type="number" name="telefone" class="form-control" id="telefone" required>
                         <label for="txtLogradouro">Logradouro:</label>
-                        <input type="text" name="logradouro" class="form-control" id="txtLogradouro" required>
+                        <input type="text" name="logradouro" class="form-control" id="logradouro" required>
                         <label for="txtNumero">Nº:</label>
-                        <input type="number" name="numero" class="form-control" id="txtNumero" required>
+                        <input type="number" name="numero" class="form-control" id="numero" required>
                         <label for="txtBairro">Bairro:</label>
-                        <input type="text" name="bairro" class="form-control" id="txtBairro" required>
+                        <input type="text" name="bairro" class="form-control" id="bairro" required>
                         <label for="txtCidade">Cidade:</label>
-                        <input type="text" name="cidade" class="form-control" id="txtCidade" required>
+                        <input type="text" name="cidade" class="form-control" id="cidade" required>
                         <label for="txtCEP">CEP:</label>
-                        <input type="number" name="cep" class="form-control" id="txtCEP" required>
+                        <input type="number" name="cep" class="form-control" id="cep" required>
                         <label for="txtReferencia">Ponto de Referência:</label>
-                        <input type="text" name="ponto_referencia" class="form-control" id="txtReferencia" required>
+                        <input type="text" name="ponto_referencia" class="form-control" id="ponto_referencia" required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Fechar</button>

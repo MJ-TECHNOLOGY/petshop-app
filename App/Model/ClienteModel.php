@@ -18,7 +18,7 @@ class ClienteModel extends Model
         }
         else
             $dao->update($this);
-        
+
     }
 
     public function getAllRows()

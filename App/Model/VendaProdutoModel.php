@@ -11,8 +11,18 @@ class VendaProdutoModel extends Model
     public $id, $data_venda, $quantidade, $valor_total, $id_produto, $id_cliente;
     public $lista_produto, $lista_cliente, $produto, $cliente;
 
+    public function calculoValorTotal()
+    {
+        $produtoDAO = new ProdutoDAO();
+        $produto = $produtoDAO->selectById($this->id_produto);
+
+        $this->valor_total = $this->quantidade * $produto->preco;
+    }
+
     public function save()
     {
+        $this->calculoValorTotal();
+
         $dao = new VendaProdutoDAO();
 
         if(empty($this->id))

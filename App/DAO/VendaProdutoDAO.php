@@ -46,9 +46,9 @@ class VendaProdutoDAO extends DAO
     public function select()
     {
         $sql = "SELECT v.*, c.nome AS nome_cliente,
-                p.descricao AS produto,
-                p.preco AS preco,
-                FROM venda v
+                p.descricao AS descricao,
+                p.preco AS preco
+                FROM venda_produto v
                 JOIN cliente c ON (c.id = v.id_cliente)
                 JOIN produto p ON (p.id = v.id_produto)";
 
@@ -63,8 +63,8 @@ class VendaProdutoDAO extends DAO
     {
         $sql = "SELECT v.*, c.nome AS nome_cliente,
                 p.descricao AS produto,
-                p.preco AS preco,
-                FROM venda v
+                p.preco AS preco
+                FROM venda_produto v
                 JOIN cliente c ON (c.id = v.id_cliente)
                 JOIN produto p ON (p.id = v.id_produto)
                 WHERE v.id=?";
