@@ -7,7 +7,8 @@ use App\Controller\{
     VendaController,
     CategoriaController,
     ProdutoController,
-    VendaProdutoController
+    VendaProdutoController,
+    LoginController
 };
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -104,6 +105,31 @@ switch ($url) {
         break;
     case '/venda_produto/delete':
         VendaProdutoController::delete();
+        break;
+
+
+    case '/login':
+        LoginController::form();
+        break;
+    case '/login/auth':
+        LoginController::auth();
+        break;
+    case '/logout':
+        LoginController::logout();
+        break;
+    case '/usuario':
+        LoginController::index();
+        break;
+    case '/login/save':
+        LoginController::save();
+        break;
+
+    case '/login/get-all':
+        LoginController::getAll();
+        break;
+
+    case '/login/get-by-id':
+        LoginController::getById();
         break;
 
 
