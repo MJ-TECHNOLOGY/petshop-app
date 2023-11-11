@@ -2,7 +2,7 @@
     <header>
         <div class="image-text">
             <span class="image d-flex justify-content-center align-items-center">
-                <img src="View/assets/logo.png">
+                <img src="View/assets/logo_preto.png">
             </span>
             <div class="text logo-text">
                 <span class="name">PetShop</span>
