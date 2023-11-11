@@ -9,6 +9,8 @@ class VendaController extends Controller
 {
     public static function getList()
     {
+        //parent::isAuthenticated();
+
         $model = new VendaModel();
         $data = $model->getAllRows();
 
@@ -17,6 +19,8 @@ class VendaController extends Controller
 
     public static function index()
     {
+        //parent::isAuthenticated();
+
         $model = new VendaModel();
         $model->getAllRows();
         $model->getAllCliente();
@@ -27,6 +31,8 @@ class VendaController extends Controller
 
     public static function getById()
     {
+        //parent::isAuthenticated();
+
         $model = new VendaModel();
 
         parent::setResponseAsJSON($model->getById($_GET['id']));
@@ -34,6 +40,8 @@ class VendaController extends Controller
 
     public static function save()
     {
+        //parent::isAuthenticated();
+
         $venda = new VendaModel();
 
         $venda->id = $_POST['id'];
@@ -48,6 +56,8 @@ class VendaController extends Controller
 
     public static function delete()
     {
+        //parent::isAuthenticated();
+
         $model = new VendaModel();
 
         $model->delete( (int) $_GET['id']);

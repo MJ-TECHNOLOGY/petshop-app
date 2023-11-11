@@ -9,13 +9,18 @@ class CategoriaController extends Controller
 {
     public static function index()
     {
+        //parent::isAuthenticated();
+
         $model = new CategoriaModel();
         $model->getAllRows();
 
         include 'View/modules/Categoria/ListarCategoria.php';
     }
 
-    public static function getAll(){
+    public static function getAll()
+    {
+        //parent::isAuthenticated();
+
         $model = new CategoriaModel();
         $model->getAllRows();
        
@@ -24,6 +29,8 @@ class CategoriaController extends Controller
 
     public static function getById()
     {
+        //parent::isAuthenticated();
+        
         $model = new CategoriaModel();
 
         parent::setResponseAsJSON($model->getById($_GET['id']));
@@ -32,6 +39,8 @@ class CategoriaController extends Controller
 
     public static function save()
     {
+        //parent::isAuthenticated();
+
         $categoria = new CategoriaModel();
 
         $categoria->id = $_POST['id'];
@@ -44,6 +53,8 @@ class CategoriaController extends Controller
 
     public static function delete()
     {
+        //parent::isAuthenticated();
+
         $model = new CategoriaModel();
 
         $model->delete( (int) $_GET['id']);

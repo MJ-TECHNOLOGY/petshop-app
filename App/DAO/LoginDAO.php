@@ -7,6 +7,7 @@ use App\Model\LoginModel;
 USE \PDO;
 
 class LoginDAO extends DAO{
+
     public function __construct()
     {
         try{
@@ -38,8 +39,9 @@ class LoginDAO extends DAO{
         $stmt->execute();
     }
     
-    public function getByEmailAndSenha($e, $s){
-        $sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
+    public function getByEmailAndSenha($e, $s)
+    {
+        $sql = "SELECT * FROM usuario WHERE email = ? AND senha = ? AND ativo = 'S'";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $e);
@@ -50,7 +52,7 @@ class LoginDAO extends DAO{
     }
 
     public function getAllRows(){
-        $sql = "SELECT * FROM usuario";
+        $sql = "SELECT * FROM usuario WHERE ativo = 'S'";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->execute();
@@ -59,7 +61,7 @@ class LoginDAO extends DAO{
     }
 
     public function getById(int $id){
-        $sql = "SELECT * FROM usuario WHERE id = ?";
+        $sql = "SELECT * FROM usuario WHERE id = ? AND ativo = 'S'";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
@@ -69,7 +71,7 @@ class LoginDAO extends DAO{
 
     public function delete(int $id)
     {
-        $sql = "UPDATE usuario WHERE id = ?";
+        $sql = "UPDATE usuario SET ativo = 'N' WHERE id = ?";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);

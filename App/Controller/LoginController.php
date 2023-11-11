@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\DAO\LoginDAO;
 use App\Model\LoginModel;
 use FFI\Exception;
 
@@ -19,11 +18,14 @@ class LoginController extends Controller
 
         include 'View/modules/Login/Login.php';
     }
+
     public static function auth()
     {
         try {
             $model = new LoginModel();
+
             $user = $model->getByEmailAndSenha($_POST['email'], $_POST['senha']);
+
             if ($user == false) {
                 parent::loginFailed();
             } else {
@@ -46,7 +48,7 @@ class LoginController extends Controller
         $model = new LoginModel();
         $model->getAllRows();
 
-        include 'View/modules/Login/ListarUsuarios.php';
+        include 'View/modules/Login/ListarUsuario.php';
     }
 
     public static function getAll()
@@ -73,8 +75,6 @@ class LoginController extends Controller
         $usuario->senha = $_POST['senha'];
 
         $usuario->save();
-
-        header("Location: /usuario");
 
         parent::setResponseAsJSON($usuario);
     }

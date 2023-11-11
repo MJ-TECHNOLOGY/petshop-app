@@ -18,19 +18,25 @@
         <div class="content-box">
             <div class="form-box">
                 <h2>Login</h2>
-                <form>
+                <form action="/login/auth">
                     <div class="input-box">
                         <span>E-mail:</span>
-                        <input type="email" placeholder="Digite seu e-mail">
+                        <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
                     </div>
 
                     <div class="input-box">
                         <span>Senha:</span>
-                        <input type="password" placeholder="Digite sua senha">
+                        <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
                     </div>
 
                     <div class="input-box">
                         <input type="submit" value="Entrar">
+                    </div>
+
+                    <div>
+                        <?php if ($loginFailed == true) : ?>
+                            <h6 style="color: red;">Falha no login, tente novamente!</h6>
+                        <?php endif; ?>
                     </div>
                 </form>
 

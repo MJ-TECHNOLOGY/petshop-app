@@ -9,13 +9,18 @@ class ClienteController extends Controller
 {
     public static function index()
     {
+        //parent::isAuthenticated();
+
         $model = new ClienteModel();
         $model->getAllRows();
 
         include 'View/modules/Cliente/ListarCliente.php';
     }
 
-    public static function getAll(){
+    public static function getAll()
+    {
+        //parent::isAuthenticated();
+
         $model = new ClienteModel();
         $model->getAllRows();
        
@@ -24,6 +29,8 @@ class ClienteController extends Controller
 
     public static function getById()
     {
+        //parent::isAuthenticated();
+
         $model = new ClienteModel();
 
         parent::setResponseAsJSON($model->getById($_GET['id']));
@@ -32,6 +39,8 @@ class ClienteController extends Controller
 
     public static function save()
     {
+        //parent::isAuthenticated();
+
         $cliente = new ClienteModel();
 
         $cliente->id = $_POST['id'];
@@ -54,6 +63,8 @@ class ClienteController extends Controller
 
     public static function delete()
     {
+        //parent::isAuthenticated();
+
         $model = new ClienteModel();
 
         $model->delete( (int) $_GET['id']);

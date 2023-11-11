@@ -1,3 +1,19 @@
+
+
+var isVisible = false;
+
+$(document).ready(function(){
+    $('#verSenha').click(() => {
+        if(isVisible == false){
+            $("#senha").prop("type", "text");
+            isVisible = true;
+        }else{
+            $("#senha").prop("type", "password");
+            isVisible = false;
+        }
+    })
+})
+
 function addUsuario(id, email, senha) {
     if (email !== "" && senha !== "") {
         $.ajax({
@@ -57,7 +73,7 @@ function loadTableLogin() {
   
 }
 
-/*function validarSenha() {  
+function validarSenha() {  
     if ( $('#txtSenha').val() != $('#txtConfirmarSenha').val()) {
       $('#txtConfirmarSenha').addClass("border border-danger")
       return false;
@@ -66,7 +82,7 @@ function loadTableLogin() {
     {
       return true;
     }
-  }*/
+  }
 
 $(document).ready(function () {    
     loadTableLogin();

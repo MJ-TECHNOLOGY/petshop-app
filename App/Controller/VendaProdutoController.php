@@ -9,6 +9,8 @@ class VendaProdutoController extends Controller
 {
     public static function getList()
     {
+        //parent::isAuthenticated();
+
         $model = new VendaProdutoModel();
         $data = $model->getAllRows();
 
@@ -17,6 +19,8 @@ class VendaProdutoController extends Controller
 
     public static function index()
     {
+        //parent::isAuthenticated();
+
         $model = new VendaProdutoModel();
         $model->getAllRows();
         $model->getAllCliente();
@@ -27,6 +31,8 @@ class VendaProdutoController extends Controller
 
     public static function getById()
     {
+        //parent::isAuthenticated();
+
         $model = new VendaProdutoModel();
 
         parent::setResponseAsJSON($model->getById($_GET['id']));
@@ -34,6 +40,8 @@ class VendaProdutoController extends Controller
 
     public static function save()
     {
+        //parent::isAuthenticated();
+
         $venda_produto = new VendaProdutoModel();
 
         $venda_produto->id = $_POST['id'];
@@ -50,6 +58,8 @@ class VendaProdutoController extends Controller
 
     public static function delete()
     {
+        //parent::isAuthenticated();
+
         $model = new VendaProdutoModel();
 
         $model->delete( (int) $_GET['id']);
