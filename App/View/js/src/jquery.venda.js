@@ -72,3 +72,13 @@ $(document).ready(function () {
         window.location.reload(true);
     })
 })
+
+function definirValor() {
+    var selectServico = document.getElementById("id_servico");
+
+    var indiceServicoSelecionado = selectServico.selectedIndex;
+
+    var valorSelecionado = selectServico.options[indiceServicoSelecionado].getAttribute("data-valor");
+
+    document.getElementById("valor").value = valorSelecionado;
+}

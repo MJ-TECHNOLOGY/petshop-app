@@ -14,22 +14,24 @@ class ServicoDAO extends DAO
 
     public function insert(ServicoModel $model)
     {
-        $sql = "INSERT INTO servico (descricao) VALUE (?)";
+        $sql = "INSERT INTO servico (descricao, valor) VALUE (?, ?)";
 
         $stmt = parent::getConnection()->prepare($sql);
 
         $stmt->bindValue(1, $model->descricao);
+        $stmt->bindValue(2, $model->valor);
 
         $stmt->execute();
     }
 
     public function update(ServicoModel $model)
     {
-        $sql = "UPDATE servico SET descricao=? WHERE id=?";
+        $sql = "UPDATE servico SET descricao=?, valor=? WHERE id=?";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $model->descricao);
-        $stmt->bindValue(2, $model->id);
+        $stmt->bindValue(2, $model->valor);
+        $stmt->bindValue(3, $model->id);
 
         $stmt->execute();
     }

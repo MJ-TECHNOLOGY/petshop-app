@@ -43,6 +43,7 @@
                                     <th>Nome_Cliente</th>
                                     <th>Nome_Animal</th>
                                     <th>Serviço</th>
+                                    <th>Valor_Servico</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
@@ -55,6 +56,7 @@
                                             <td><?= $venda->nome_cliente ?></td>
                                             <td><?= $venda->nome_animal ?></td>
                                             <td><?= $venda->servico ?></td>
+                                            <td>R$ <?= $venda->valor_servico ?></td>
                                             <td class="actions-list">
                                                 <box-icon name="edit" color="#E9410B" id="<?= $venda->id ?>" data-bs-toggle="modal" data-bs-target="#modalVenda" class="btn-icon btn-edit"></box-icon>
                                                 <box-icon name="trash" color="#E9410B" id="<?= $venda->id ?>" class="btn-icon btn-delete"></box-icon>
@@ -118,17 +120,22 @@
                         </div>
                         <div class="mb-3">
                             <label for="id_servico">Serviço:</label><br>
-                            <select class="selectpicker form-control" data-live-search="true" name="id_servico" id="id_servico">
+                            <select class="selectpicker form-control" data-live-search="true" name="id_servico" id="id_servico" onchange="definirValor()">
                                 <?php if ($model->lista_servico == null) : ?>
                                     <option class="option-evento" value="">Cadastre um servico primeiro!</option>
                                 <?php else : ?>
                                     <option class="option-evento" value="">Selecione o servico</option>
                                     <?php foreach ($model->lista_servico as $servico) : ?>
-
-                                        <option class="option-evento" value=<?= $servico->id ?>><?= $servico->descricao ?></option>
+                                        <option class="option-evento" value="<?= $servico->id ?>" data-valor="<?= $servico->valor ?>">
+                                            <?= $servico->descricao ?>
+                                        </option>
                                     <?php endforeach ?>
                                 <?php endif ?>
                             </select>
+                        </div>
+                        <div class="input-container">
+                            <label for="valor_servico">Valor Serviço:</label><br>
+                            <input type="number" name="valor" class="form-control" id="valor" required readonly><br>
                         </div>
                     </div>
                     <div class="modal-footer">

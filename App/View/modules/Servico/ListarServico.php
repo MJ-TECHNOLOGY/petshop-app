@@ -40,6 +40,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Descrição</th>
+                                    <th>Valor</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
@@ -49,6 +50,7 @@
                                         <tr>
                                             <td><?= $servico->id ?></td>
                                             <td><?= $servico->descricao ?></td>
+                                            <td>R$ <?= $servico->valor ?></td>
                                             <td class="actions-list">
                                                 <box-icon name="edit" color="#E9410B" id="<?= $servico->id ?>" data-bs-toggle="modal" data-bs-target="#modalServico" class="btn-icon btn-edit"></box-icon>
                                                 <box-icon name="trash" color="#E9410B" id="<?= $servico->id ?>" class="btn-icon btn-delete"></box-icon>
@@ -81,6 +83,8 @@
                         <input type="hidden" name="id" id="id">
                         <label for="txtDescricao">Descrição:</label>
                         <input type="text" name="descricao" class="form-control" id="descricao" required maxlength="90">
+                        <label for="txtValor">Valor:</label>
+                        <input type="number" name="valor" class="form-control" id="valor" required maxlength="90">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Fechar</button>

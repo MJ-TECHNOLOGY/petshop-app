@@ -45,7 +45,8 @@ class VendaDAO extends DAO
     {
         $sql = "SELECT v.*, c.nome AS nome_cliente,
                 a.nome_animal AS nome_animal,
-                s.descricao AS servico
+                s.descricao AS servico,
+                s.valor AS valor_servico
                 FROM venda v
                 JOIN cliente c ON (c.id = v.id_cliente)
                 JOIN animal a ON (a.id = v.id_animal)
@@ -62,7 +63,8 @@ class VendaDAO extends DAO
     {
         $sql = "SELECT v.*, c.nome AS nome_cliente,
                 a.nome_animal AS nome_animal,
-                s.descricao AS servico
+                s.descricao AS servico,
+                s.valor AS valor_servico
                 FROM venda v
                 JOIN cliente c ON (c.id = v.id_cliente)
                 JOIN animal a ON (a.id = v.id_animal)

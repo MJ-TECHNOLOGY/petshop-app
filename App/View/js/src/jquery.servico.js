@@ -1,11 +1,12 @@
-function addServico(id, descricao) {
+function addServico(id, descricao, valor) {
     if (descricao !== "") {
         $.ajax({
             type: "POST",
             url: "/servico/save",
             data: {
                 id: id,
-                descricao: descricao
+                descricao: descricao,
+                valor: valor,
             },
             dataType: 'json',
             success: function (result) {

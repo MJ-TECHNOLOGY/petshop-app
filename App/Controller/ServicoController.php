@@ -45,6 +45,7 @@ class ServicoController extends Controller
 
         $servico->id = $_POST['id'];
         $servico->descricao = $_POST['descricao'];
+        $servico->valor = $_POST['valor'];
 
         $servico->save();
 
