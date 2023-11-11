@@ -39,7 +39,7 @@ class LoginDAO extends DAO{
     }
     
     public function getByEmailAndSenha($e, $s){
-        $sql = "SELECT * FROM usuario WHERE email = ? AND senha = ? AND ativo = 'S'";
+        $sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $e);
@@ -50,7 +50,7 @@ class LoginDAO extends DAO{
     }
 
     public function getAllRows(){
-        $sql = "SELECT * FROM usuario WHERE ativo = 'S'";
+        $sql = "SELECT * FROM usuario";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->execute();
@@ -59,7 +59,7 @@ class LoginDAO extends DAO{
     }
 
     public function getById(int $id){
-        $sql = "SELECT * FROM usuario WHERE id = ? AND ativo = 'S'";
+        $sql = "SELECT * FROM usuario WHERE id = ?";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
@@ -69,7 +69,7 @@ class LoginDAO extends DAO{
 
     public function delete(int $id)
     {
-        $sql = "UPDATE usuario SET ativo = 'N' WHERE id = ?";
+        $sql = "UPDATE usuario WHERE id = ?";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);

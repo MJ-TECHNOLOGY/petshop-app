@@ -55,9 +55,9 @@
                 </a>
             </li>
             <li>
-                <a href="/relatorio">
-                    <i class='bx bx-cog icon'></i>
-                    <span class="text nav-text">Configuração</span>
+                <a href="/usuario">
+                    <i class='bx bx-user icon'></i>
+                    <span class="text nav-text">Usuários</span>
                 </a>
             </li>
 

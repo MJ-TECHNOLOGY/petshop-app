@@ -74,6 +74,8 @@ class LoginController extends Controller
 
         $usuario->save();
 
+        header("Location: /usuario");
+
         parent::setResponseAsJSON($usuario);
     }
 

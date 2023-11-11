@@ -111,15 +111,19 @@ switch ($url) {
     case '/login':
         LoginController::form();
         break;
+        
     case '/login/auth':
         LoginController::auth();
         break;
+        
     case '/logout':
         LoginController::logout();
         break;
+
     case '/usuario':
         LoginController::index();
         break;
+
     case '/login/save':
         LoginController::save();
         break;
