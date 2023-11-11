@@ -1,4 +1,4 @@
-function addVenda(id, agendamento, id_cliente, id_animal) {
+function addVenda(id, agendamento, id_cliente, id_animal, id_servico) {
     if (agendamento !== "") {
         $.ajax({
             type: "POST",
@@ -8,6 +8,7 @@ function addVenda(id, agendamento, id_cliente, id_animal) {
                 agendamento: agendamento,
                 id_cliente: id_cliente,
                 id_animal: id_animal,
+                id_servico: id_servico,
             },
             dataType: 'json',
             success: function (result) {
@@ -29,6 +30,7 @@ function getVendaById(id) {
             $('#agendamento').val(result.response_data.agendamento);
             $('#id_cliente').val(result.response_data.id_cliente);
             $('#id_animal').val(result.response_data.id_animal);
+            $('#id_servico').val(result.response_data.id_servico);
             $('#id').val(result.response_data.id);
         },
         error: function (result) {

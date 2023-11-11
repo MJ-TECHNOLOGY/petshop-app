@@ -42,6 +42,7 @@
                                     <th>Agendamento</th>
                                     <th>Nome_Cliente</th>
                                     <th>Nome_Animal</th>
+                                    <th>Serviço</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
@@ -53,6 +54,7 @@
                                             <td><?= $venda->agendamento ?></td>
                                             <td><?= $venda->nome_cliente ?></td>
                                             <td><?= $venda->nome_animal ?></td>
+                                            <td><?= $venda->servico ?></td>
                                             <td class="actions-list">
                                                 <box-icon name="edit" color="#E9410B" id="<?= $venda->id ?>" data-bs-toggle="modal" data-bs-target="#modalVenda" class="btn-icon btn-edit"></box-icon>
                                                 <box-icon name="trash" color="#E9410B" id="<?= $venda->id ?>" class="btn-icon btn-delete"></box-icon>
@@ -75,7 +77,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalVendaTitle">Cadastrar Venda</h5>
+                    <h5 class="modal-title" id="modalVendaTitle">Fazer agendamento</h5>
                     <!--<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>-->
                     </button>
@@ -110,6 +112,20 @@
                                     <?php foreach ($model->lista_animal as $animal) : ?>
 
                                         <option class="option-evento" value=<?= $animal->id ?>><?= $animal->nome_animal ?></option>
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_servico">Serviço:</label><br>
+                            <select class="selectpicker form-control" data-live-search="true" name="id_servico" id="id_servico">
+                                <?php if ($model->lista_servico == null) : ?>
+                                    <option class="option-evento" value="">Cadastre um servico primeiro!</option>
+                                <?php else : ?>
+                                    <option class="option-evento" value="">Selecione o servico</option>
+                                    <?php foreach ($model->lista_servico as $servico) : ?>
+
+                                        <option class="option-evento" value=<?= $servico->id ?>><?= $servico->descricao ?></option>
                                     <?php endforeach ?>
                                 <?php endif ?>
                             </select>

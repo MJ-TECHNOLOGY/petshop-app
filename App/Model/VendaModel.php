@@ -4,12 +4,13 @@ namespace App\Model;
 
 use App\DAO\ClienteDAO;
 use App\DAO\AnimalDAO;
+use App\DAO\ServicoDAO;
 use App\DAO\VendaDAO;
 
 class VendaModel extends Model
 {
-    public $id, $agendamento, $id_cliente, $id_animal;
-    public $lista_cliente, $lista_animal, $cliente, $animal;
+    public $id, $agendamento, $id_cliente, $id_animal, $id_servico;
+    public $lista_cliente, $lista_animal, $lista_servico, $cliente, $animal, $servico;
 
     public function save()
     {
@@ -56,6 +57,13 @@ class VendaModel extends Model
         $dao = new AnimalDAO();
 
         $this->lista_animal = $dao->select();
+    }
+
+    public function getAllServico()
+    {
+        $dao = new ServicoDAO();
+
+        $this->lista_servico = $dao->select();
     }
 
     public function delete(int $id)

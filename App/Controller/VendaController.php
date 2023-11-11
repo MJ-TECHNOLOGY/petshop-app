@@ -25,6 +25,7 @@ class VendaController extends Controller
         $model->getAllRows();
         $model->getAllCliente();
         $model->getAllAnimal();
+        $model->getAllServico();
 
         include 'View/modules/Venda/ListarVenda.php';
     }
@@ -48,6 +49,7 @@ class VendaController extends Controller
         $venda->agendamento = $_POST['agendamento'];
         $venda->id_cliente = $_POST['id_cliente'];
         $venda->id_animal = $_POST['id_animal'];
+        $venda->id_servico = $_POST['id_servico'];
 
         $venda->save();
 
