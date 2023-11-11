@@ -39,7 +39,7 @@
             </li>
             <li>
                 <a href="/venda_produto">
-                    <i class='bx bx-task icon'></i>
+                    <i class='bx bx-barcode icon'></i>
                     <span class="text nav-text">Venda Produto</span>
                 </a>
             </li>
@@ -52,6 +52,12 @@
                 <a href="/categoria">
                     <i class='bx bx-category icon'></i>
                     <span class="text nav-text">Categoria</span>
+                </a>
+            </li>
+            <li>
+                <a href="/servico">
+                    <i class='bx bx-clipboard icon'></i>
+                    <span class="text nav-text">Serviços</span>
                 </a>
             </li>
             <li>
