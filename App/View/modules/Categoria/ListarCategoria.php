@@ -50,8 +50,8 @@
                                             <td><?= $categoria->id ?></td>
                                             <td><?= $categoria->descricao ?></td>
                                             <td class="actions-list">
-                                                <box-icon name="edit" color="#1e82f4" id="<?= $categoria->id ?>" data-bs-toggle="modal" data-bs-target="#modalCategoria" class="btn-icon btn-edit"></box-icon>
-                                                <box-icon name="trash" color="#1e82f4" id="<?= $categoria->id ?>" class="btn-icon btn-delete"></box-icon>
+                                                <box-icon name="edit" color="#E9410B" id="<?= $categoria->id ?>" data-bs-toggle="modal" data-bs-target="#modalCategoria" class="btn-icon btn-edit"></box-icon>
+                                                <box-icon name="trash" color="#E9410B" id="<?= $categoria->id ?>" class="btn-icon btn-delete"></box-icon>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn" style="background-color: #1e82f4;" id="adicionarCategoria">Salvar Registro</button>
+                        <button type="submit" class="btn" style="background-color: #E9410B;" id="adicionarCategoria">Salvar Registro</button>
                     </div>
                 </form>
             </div>

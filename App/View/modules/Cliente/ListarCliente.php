@@ -68,8 +68,8 @@
                                             <td><?= $cliente->cep ?></td>
                                             <td><?= $cliente->ponto_referencia ?></td>
                                             <td class="actions-list">
-                                                <box-icon name="edit" color="#1e82f4" id="<?= $cliente->id ?>" data-bs-toggle="modal" data-bs-target="#modalCliente" class="btn-icon btn-edit"></box-icon>
-                                                <box-icon name="trash" color="#1e82f4" id="<?= $cliente->id ?>" class="btn-icon btn-delete"></box-icon>
+                                                <box-icon name="edit" color="#E9410B" id="<?= $cliente->id ?>" data-bs-toggle="modal" data-bs-target="#modalCliente" class="btn-icon btn-edit"></box-icon>
+                                                <box-icon name="trash" color="#E9410B" id="<?= $cliente->id ?>" class="btn-icon btn-delete"></box-icon>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
@@ -122,7 +122,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn" style="background-color: #1e82f4;" id="adicionarCliente">Salvar Registro</button>
+                        <button type="submit" class="btn" style="background-color: #E9410B;" id="adicionarCliente">Salvar Registro</button>
                     </div>
                 </form>
             </div>

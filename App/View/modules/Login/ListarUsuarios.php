@@ -52,8 +52,8 @@
                                             <td><?= $usuario->email ?></td>
                                             <td><?= $usuario->senha ?></td>
                                             <td class="actions-list">
-                                                <box-icon name="edit" color="#1e82f4" id="<?= $usuario->id ?>" data-bs-toggle="modal" data-bs-target="#modalUsuario" class="btn-icon btn-edit"></box-icon>
-                                                <box-icon name="trash" color="#1e82f4" id="<?= $usuario->id ?>" class="btn-icon btn-delete"></box-icon>
+                                                <box-icon name="edit" color="#E9410B" id="<?= $usuario->id ?>" data-bs-toggle="modal" data-bs-target="#modalUsuario" class="btn-icon btn-edit"></box-icon>
+                                                <box-icon name="trash" color="#E9410B" id="<?= $usuario->id ?>" class="btn-icon btn-delete"></box-icon>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn" style="background-color: #1e82f4;" id="adicionarUsuario">Salvar Registro</button>
+                        <button type="submit" class="btn" style="background-color: #E9410B;" id="adicionarUsuario">Salvar Registro</button>
                     </div>
                 </form>
             </div>

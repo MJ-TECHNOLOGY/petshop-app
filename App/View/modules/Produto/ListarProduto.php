@@ -62,8 +62,8 @@
                                             <td><?= $produto->codigo ?></td>
                                             <td><?= $produto->data_validade ?></td>
                                             <td class="actions-list">
-                                                <box-icon name="edit" color="#1e82f4" id="<?= $produto->id ?>" data-bs-toggle="modal" data-bs-target="#modalProduto" class="btn-icon btn-edit"></box-icon>
-                                                <box-icon name="trash" color="#1e82f4" id="<?= $produto->id ?>" class="btn-icon btn-delete"></box-icon>
+                                                <box-icon name="edit" color="#E9410B" id="<?= $produto->id ?>" data-bs-toggle="modal" data-bs-target="#modalProduto" class="btn-icon btn-edit"></box-icon>
+                                                <box-icon name="trash" color="#E9410B" id="<?= $produto->id ?>" class="btn-icon btn-delete"></box-icon>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
@@ -131,7 +131,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn" style="background-color: #1e82f4;" id="adicionarProduto">Salvar Registro</button>
+                        <button type="submit" class="btn" style="background-color: #E9410B;" id="adicionarProduto">Salvar Registro</button>
                     </div>
                 </form>
             </div>

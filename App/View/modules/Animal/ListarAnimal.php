@@ -60,8 +60,8 @@
                                             <td><?= $animal->cor ?></td>
                                             <td><?= $animal->observacao ?></td>
                                             <td class="actions-list">
-                                                <box-icon name="edit" color="#1e82f4" id="<?= $animal->id ?>" data-bs-toggle="modal" data-bs-target="#modalAnimal" class="btn-icon btn-edit"></box-icon>
-                                                <box-icon name="trash" color="#1e82f4" id="<?= $animal->id ?>" class="btn-icon btn-delete"></box-icon>
+                                                <box-icon name="edit" color="#E9410B" id="<?= $animal->id ?>" data-bs-toggle="modal" data-bs-target="#modalAnimal" class="btn-icon btn-edit"></box-icon>
+                                                <box-icon name="trash" color="#E9410B" id="<?= $animal->id ?>" class="btn-icon btn-delete"></box-icon>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
@@ -104,7 +104,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn" style="background-color: #1e82f4;" id="adicionarAnimal">Salvar Registro</button>
+                        <button type="submit" class="btn" style="background-color: #E9410B;" id="adicionarAnimal">Salvar Registro</button>
                     </div>
                 </form>
             </div>
