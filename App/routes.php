@@ -9,7 +9,8 @@ use App\Controller\{
     ProdutoController,
     VendaProdutoController,
     LoginController,
-    ServicoController
+    ServicoController,
+    BackupController
 };
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -161,7 +162,11 @@ switch ($url) {
         DashboardController::index();
         break;
 
+    case '/backup':
+        BackupController::backup();
+        break;
+
     default:
-        header('Location: /home');
+        header('Location: /login');
         break;
 }

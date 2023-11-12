@@ -66,6 +66,12 @@
                     <span class="text nav-text">Usuários</span>
                 </a>
             </li>
+            <li>
+                <a href="/backup">
+                    <i class='bx bx-upload icon'></i>
+                    <span class="text nav-text">Backup Dados</span>
+                </a>
+            </li>
 
         </div>
 
